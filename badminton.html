@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Badminton Booking Grid</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for the Inter font and to ensure full viewport coverage */
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            overflow: hidden; /* Prevent body scrollbars */
+        }
+        /* Ensure iframes fill their container */
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none; /* Remove default iframe border */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex flex-col h-screen w-screen p-0">
+    <div class="w-full bg-blue-700 text-white text-center py-4 shadow-md rounded-b-lg">
+        <h1 class="text-4xl font-extrabold tracking-tight">Badminton Booking</h1>
+    </div>
+
+    <!-- The grid now has 6 columns (1 auto for row headers, 5 for courts)
+         and 3 rows (1 auto for column headers, 2 for iframe content) -->
+    <div class="grid grid-cols-[auto,1fr,1fr,1fr,1fr,1fr] grid-rows-[auto,1fr,1fr] gap-1 w-full h-[calc(100vh-80px)] p-1">
+        <!--
+            grid-cols-[auto,1fr,1fr,1fr,1fr,1fr] means:
+            - The first column (row headers) will take 'auto' height (as much as its content needs).
+            - The next five columns (courts) will share the remaining space equally (1fr each).
+
+            grid-rows-[auto,1fr,1fr] means:
+            - The first row (column headers) will take 'auto' height.
+            - The next two rows (iframes) will share the remaining space equally.
+
+            The h-[calc(100vh-80px)] accounts for the height of the main page heading.
+        -->
+
+        <div class="col-span-1 flex items-center justify-center bg-gray-200 text-gray-700 font-semibold text-lg py-2 rounded-md shadow-sm"></div>
+
+        <div class="col-span-1 flex items-center justify-center bg-blue-500 text-white font-semibold text-lg py-2 rounded-md shadow-sm">Court 1</div>
+        <div class="col-span-1 flex items-center justify-center bg-blue-500 text-white font-semibold text-lg py-2 rounded-md shadow-sm">Court 2</div>
+        <div class="col-span-1 flex items-center justify-center bg-blue-500 text-white font-semibold text-lg py-2 rounded-md shadow-sm">Court 3</div>
+        <div class="col-span-1 flex items-center justify-center bg-blue-500 text-white font-semibold text-lg py-2 rounded-md shadow-sm">Court 4</div>
+        <div class="col-span-1 flex items-center justify-center bg-blue-500 text-white font-semibold text-lg py-2 rounded-md shadow-sm">Court 5</div>
+
+        <div class="col-span-1 flex items-center justify-center bg-green-500 text-white font-semibold text-lg py-2 rounded-md shadow-sm">60m slot</div>
+        <div class="border border-gray-300 overflow-hidden rounded-md"><iframe src="about:blank" title="Iframe 1"></iframe></div>
+        <div class="border border-gray-300 overflow-hidden rounded-md"><iframe src="about:blank" title="Iframe 2"></iframe></div>
+        <div class="border border-gray-300 overflow-hidden rounded-md"><iframe src="about:blank" title="Iframe 3"></iframe></div>
+        <div class="border border-gray-300 overflow-hidden rounded-md"><iframe src="about:blank" title="Iframe 4"></iframe></div>
+        <div class="border border-gray-300 overflow-hidden rounded-md"><iframe src="about:blank" title="Iframe 5"></iframe></div>
+
+        <div class="col-span-1 flex items-center justify-center bg-orange-500 text-white font-semibold text-lg py-2 rounded-md shadow-sm">40m slot</div>
+        <div class="border border-gray-300 overflow-hidden rounded-md"><iframe src="about:blank" title="Iframe 6"></iframe></div>
+        <div class="border border-gray-300 overflow-hidden rounded-md"><iframe src="about:blank" title="Iframe 7"></iframe></div>
+        <div class="border border-gray-300 overflow-hidden rounded-md"><iframe src="about:blank" title="Iframe 8"></iframe></div>
+        <div class="border border-gray-300 overflow-hidden rounded-md"><iframe src="about:blank" title="Iframe 9"></iframe></div>
+        <div class="border border-gray-300 overflow-hidden rounded-md"><iframe src="about:blank" title="Iframe 10"></iframe></div>
+    </div>
+</body>
+</html>
